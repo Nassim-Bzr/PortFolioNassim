@@ -17,7 +17,7 @@ export const Home = () => {
                 </h1>
                 <h1 className="heading-name">
                   Je suis
-                  <strong className="main-name"> &nbsp;Vincent PERON</strong>
+                  <strong className="main-name"> &nbsp;Nassim BOUZERARA</strong>
                 </h1>
                 <div style={{ padding: 50, textAlign: "left" }}>
                   <Type />

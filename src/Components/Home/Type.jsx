@@ -6,7 +6,7 @@ export const Type = () => {
   return (
     <Typewriter
       options={{
-        strings: [" Développeur FullStack ", " Développeur Front-End "],
+        strings: [" Développeur Front-End ", " Développeur Back-End "," Développeur FullStack "],
         autoStart: true,
         loop: true,
         deleteSpeed: 70
