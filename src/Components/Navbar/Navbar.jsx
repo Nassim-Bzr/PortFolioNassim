@@ -5,6 +5,9 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import logo from "../Assets/Pslogo.png";
 import "./Navbar.css";
+import { useHistory } from "react-router-dom";
+import { downloadCV } from "../utils"; // Importer la fonction de téléchargement
+
 
 import { CgFileDocument } from "react-icons/cg";
 
@@ -19,6 +22,14 @@ export const Navbarjsx = () => {
   const [expand, setexpand] = React.useState(false);
   const [navColour, setnavColour] = React.useState(false);
   const [pathstate, setpathstate] = React.useState("#home");
+
+  const history = useHistory();
+
+  const handleCVDownload = () => {
+    downloadCV(); // Appeler la fonction de téléchargement lorsque le lien est cliqué
+    setexpand(false);
+  };
+
   function Scrollhandler() {
     if (window.scrollY >= 20) {
       setnavColour(true);
@@ -30,7 +41,9 @@ export const Navbarjsx = () => {
   React.useEffect(() => {
     if (pathstate === "#resume") {
       const element = document.getElementById("resumelink");
-      element.click();
+      if (element) {
+        element.click();
+      }
     } else {
       const element = document.getElementById(pathstate);
       if (element) {
@@ -38,7 +51,18 @@ export const Navbarjsx = () => {
       }
     }
   }, [pathstate]);
+
+  const handleNavLinkClick = (path) => {
+    setexpand(false);
+    setpathstate(path);
+    if (path === "#resume") {
+      handleCVDownload(); // Appeler la fonction de téléchargement du CV
+    }
+  };
+  
+
   window.addEventListener("scroll", Scrollhandler);
+
   return (
     <Navbar
       expanded={expand}
@@ -52,7 +76,7 @@ export const Navbarjsx = () => {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => setexpand(expand ? false : "expanded")}
+          onClick={() => setexpand(prevExpand => !prevExpand)}
         >
           <span></span>
           <span></span>
@@ -64,7 +88,7 @@ export const Navbarjsx = () => {
               <Nav.Link
                 as={Link}
                 to="/"
-                onClick={(() => setexpand(false), () => setpathstate("#home"))}
+                onClick={() => handleNavLinkClick("#home")}
               >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Accueil
               </Nav.Link>
@@ -73,7 +97,7 @@ export const Navbarjsx = () => {
               <Nav.Link
                 as={Link}
                 to="/about"
-                onClick={(() => setexpand(false), () => setpathstate("#about"))}
+                onClick={() => handleNavLinkClick("#about")}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> A propos
               </Nav.Link>
@@ -82,25 +106,20 @@ export const Navbarjsx = () => {
               <Nav.Link
                 as={Link}
                 to="/projects"
-                onClick={
-                  (() => setexpand(false), () => setpathstate("#projects"))
-                }
+                onClick={() => handleNavLinkClick("#projects")}
               >
                 <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }} />{" "} Projets
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                Projets
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="./Assets/CV_Vincent_PERON.pdf"
-                onClick={
-                  (() => setexpand(false), () => setpathstate("#resume"))
-                }
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Mon CV
-              </Nav.Link>
-            </Nav.Item>
+            <Nav.Link href="https://drive.google.com/file/d/10FTPOxaG-ONAIw6WLwwAORTIXaOKewcw/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+  <CgFileDocument style={{ marginBottom: "2px" }} /> Mon CV
+</Nav.Link>
+
+    </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

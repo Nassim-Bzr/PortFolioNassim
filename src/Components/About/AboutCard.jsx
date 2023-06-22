@@ -8,12 +8,16 @@ export const AboutCard = () => {
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
             Véritable adepte de  <span className="purple">nouvelles technologies</span>, je cherche constamment à monter en compétence. 
-            <p>Je suis passionné par le développement web ( front avec React, back avec Node.Js ), le webdesign, le montage vidéo, le pilotage de drone et l’impression 3D.</p>
-          <p>Après quelques années en tant que technicien de maintenance industrielle , puis magasinier, je me suis dirigé vers une de mes passions : le numérique. </p>
-          <p>J’ai eu la chance de pouvoir développer mes compétences pendant 6 ans en tant que technicien de proximité, administrateur système et responsable opérationnel.</p>
-          Mon intérêt pour le développement Web a commencé en 2012 lorsque j'ai décidé d'essayer d'éditer des thèmes Wordpress - la refonte et la modification des thèmes m'ont beaucoup appris sur HTML et CSS ! 
+            <p>Je suis passionné par le développement web ( front avec React, back avec Node.Js ), le webdesign et le montage vidéo.</p>
+          <p>Je suis constamment à l'affût des dernières tendances et des meilleures pratiques en matière de développement web. J'aime explorer de nouvelles bibliothèques et frameworks pour améliorer mes compétences et rester à jour dans un domaine en constante évolution.
+
+</p>
+<p>En plus de mes compétences techniques, je suis également un communicateur efficace et un bon collaborateur. J'apprécie travailler en équipe, échanger des idées et trouver des solutions créatives aux défis auxquels nous sommes confrontés.</p>
+
+
+<p>Enfin, je suis passionné par l'apprentissage continu et je suis toujours prêt à relever de nouveaux défis. Je suis ouvert aux nouvelles opportunités qui me permettront de développer mes compétences et de contribuer à des projets innovants et passionnants.</p>
           
-            <br />
+            
             <br />
             Mon objectif professionnel est de devenir développeur Fullstack JS, avec une préférence pour le front end.
           </p>

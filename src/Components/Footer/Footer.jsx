@@ -26,7 +26,7 @@ export const Footer = () => {
         </li>
         <li className="social-icons">
           <a
-            href="https://www.linkedin.com/in/nassim-bouzerara-282530232/"
+            href="https://www.linkedin.com/in/nassim-bouzerara/"
             target="_blank"
             rel="noreferrer"
             className="icon-colour home-social-icons"
@@ -36,7 +36,7 @@ export const Footer = () => {
         </li>
         <li className="social-icons">
           <a
-            href="https://twitter.com/VincentPERON4"
+            href="https://twitter.com"
             target="_blank"
             rel="noreferrer"
             className="icon-colour home-social-icons"
